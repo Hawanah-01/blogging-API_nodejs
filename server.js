@@ -28,7 +28,7 @@ const PORT = process.env.PORT || 7000;
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Welcome to Hawa's Blogging API 🚀");
+  res.send("hurraayyyyy!!!! Welcome to Hawa's Blogging API");
 });
 
 
@@ -40,8 +40,8 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).json({ message: err.message });
 });
 
-app.listen(PORT, (req, res)=>{
-    console.log(`Server is listening on http://localhost:${PORT}`)
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server is listening on port ${PORT}`);
 });
 
 
