@@ -27,6 +27,11 @@ const PORT = 7000;
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Welcome to Hawa's Blogging API 🚀");
+});
+
+
 app.use('/auth', authRoutes); // does it work?
 app.use('/blogs', blogRoutes);
 app.use('/users', authenticateUser, userRoutes);
