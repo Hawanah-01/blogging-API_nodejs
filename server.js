@@ -23,7 +23,7 @@ connectDB();
 
 const app = express();
 
-const PORT = 7000;
+const PORT = process.env.PORT || 7000;
 
 app.use(express.json());
 
@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
 });
 
 
-app.use('/auth', authRoutes); // does it work?
+app.use('/auth', authRoutes);
 app.use('/blogs', blogRoutes);
 app.use('/users', authenticateUser, userRoutes);
 
@@ -41,7 +41,7 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, (req, res)=>{
-    console.log(`Server is listening on http://localhost/${PORT}`)
+    console.log(`Server is listening on http://localhost:${PORT}`)
 });
 
 
